@@ -370,9 +370,7 @@ copilot
 
 For example, if you tell Copilot CLI "I always prefer pytest for Python testing", it can remember that preference and apply it automatically in future sessions. All without you having to repeat it.
 
-> 💡 **Memory vs. Sessions**: Sessions save the *conversation history* so you can resume a specific task. Memory saves *preferences and context* that apply across all your work. Think of sessions as project notebooks and memory as your personal notepad.
-
-> 🔒 **Privacy note**: Memory is scoped either to your user account (visible to you across all repos) or to a specific repository (shared with collaborators). The CLI tells you which scope applies whenever it stores something.
+> 💡 **Memory vs. Sessions**: Sessions save conversation history so you can resume a specific task. Memory saves reusable repository facts and user preferences that Copilot can apply in future work. Think of sessions as task notebooks, and memory as reusable context Copilot can carry forward.
 
 ### Check and Manage Context
 
