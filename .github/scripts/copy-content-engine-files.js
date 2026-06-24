@@ -4,6 +4,9 @@
  *
  * Usage:
  *   npm run copy:content-engine
+ *
+ * Optional:
+ *   CONTENT_ENGINE_DESTINATION_ROOT=/path/to/cse-content-engine/content/learning-pathways/copilot-cli-for-beginners npm run copy:content-engine
  */
 
 const {
@@ -12,13 +15,18 @@ const {
   mkdirSync,
   readdirSync,
   readFileSync,
+  rmSync,
   statSync,
   writeFileSync,
 } = require('fs');
 const { dirname, join, relative, resolve } = require('path');
 
 const sourceRoot = process.cwd();
-const destinationRoot = '/Users/danwahlin/Desktop/projects/cse-content-engine/content/learning-pathways/copilot-cli-for-beginners';
+const defaultDestinationRoot = resolve(
+  sourceRoot,
+  '../cse-content-engine/content/learning-pathways/copilot-cli-for-beginners',
+);
+const destinationRoot = resolve(process.env.CONTENT_ENGINE_DESTINATION_ROOT || defaultDestinationRoot);
 const destinationParent = dirname(destinationRoot);
 const contentEngineSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -93,6 +101,11 @@ function ensureSafeDestination() {
   if (resolvedDestination.startsWith(`${resolvedSource}/`)) {
     fail('Destination cannot be inside the source repository.');
   }
+}
+
+function resetDestination() {
+  rmSync(destinationRoot, { recursive: true, force: true });
+  log(`Cleared ${destinationRoot}`);
 }
 
 function copyFile(sourcePath, destinationPath) {
@@ -333,6 +346,7 @@ function validateMarkdownFrontmatter() {
 }
 
 ensureSafeDestination();
+resetDestination();
 copyCourseContent();
 validateMarkdownFrontmatter();
 validateMarkdownImagePaths();
