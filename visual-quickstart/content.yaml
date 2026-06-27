@@ -1,0 +1,611 @@
+# Editable content for the Pip comic site.
+# Edit the words here, then rebuild with build_site.py.
+# The skill owns the rendering engine; this file owns the content.
+# Per bubble: lines (the speech text), w (bubble width px),
+# tx/ty (the speaker's head x/y - the tail points there).
+
+home:
+  title_html: GitHub Copilot CLI<br>for Beginners
+  subtitle: A visual quickstart guide to the GitHub Copilot CLI.
+  cta_text: Get Started!
+  cta_href: chapter-00.html
+  intro:
+    img: ch00-welcome.png
+    alt: Pip the fox waves hello beside Professor Quill the owl at a cozy desk with a laptop.
+    caption: Meet Pip and Professor Quill - pick a chapter below to get started!
+    bubbles:
+    - lines:
+      - Hi, I'm Pip! Let's get setup
+      - to code together!
+      w: 720
+      tx: 540
+      ty: 250
+    - lines:
+      - And I'm Professor Quill. I explain
+      - the why behind each step.
+      w: 640
+      tx: 1140
+      ty: 560
+footer_html: <a href="https://github.com/github/copilot-cli-for-beginners">GitHub
+  Copilot CLI for Beginners course</a>.
+chapters:
+- badge: Chapter 00
+  title: Quick Start
+  subtitle: Install GitHub Copilot CLI, sign in, clone the samples, and verify it works.
+  selector: Quick Start · install, sign in, verify
+  panels:
+  - img: ch00-install.png
+    alt: Pip gives a thumbs up as software installs onto a laptop.
+    caption: Install the CLI
+    bubble:
+      lines:
+      - Got Node.js or Homebrew? One
+      - command and we're up and running!
+      w: 720
+      tx: 645
+      ty: 130
+    term:
+    - npm install -g @github/copilot
+    - 'brew install copilot-cli      # macOS / Linux alternative'
+  - img: ch00-login.png
+    alt: Pip holds a key beside Professor Quill, who shows a phone with a security shield.
+    caption: Sign in securely
+    bubbles:
+    - lines:
+      - Start Copilot, then log in.
+      - Confirm the code in your browser.
+      w: 660
+      tx: 520
+      ty: 260
+    - lines:
+      - Your sign-in stays safe. The
+      - code proves it is really you.
+      w: 620
+      tx: 1010
+      ty: 540
+    term:
+    - copilot
+    - '> /login'
+  - img: ch00-clone.png
+    alt: Pip copies a folder of project files onto a laptop from a cloud.
+    caption: Clone the sample project
+    bubble:
+      lines:
+      - Grab the course samples so we
+      - have something to build with!
+      w: 680
+      tx: 660
+      ty: 300
+    term:
+    - git clone https://github.com/github/copilot-cli-for-beginners
+    - cd copilot-cli-for-beginners
+  - img: ch00-verify.png
+    alt: Pip points at a laptop showing books and a green check.
+    caption: Verify it works
+    bubble:
+      lines:
+      - Let's run the sample book app.
+      - See five books? We're good to go!
+      w: 620
+      tx: 430
+      ty: 180
+    term:
+    - cd samples/book-app-project
+    - python book_app.py list
+  - img: ch00-ready.png
+    alt: Pip cheers beside Professor Quill, who gives a thumbs up next to a trophy.
+    caption: You're ready!
+    bubbles:
+    - lines:
+      - Setup complete! The real
+      - fun starts in Chapter 01.
+      w: 560
+      tx: 500
+      ty: 185
+    - lines:
+      - Well done. You
+      - earned this trophy!
+      w: 470
+      tx: 960
+      ty: 500
+- badge: Chapter 01
+  title: First Steps
+  subtitle: See Copilot CLI in action, then learn the three interaction modes.
+  selector: First Steps · demos & the three modes
+  panels:
+  - img: ch01-magic.png
+    alt: Pip looks amazed beside Professor Quill as magic sparkles rise from a laptop.
+    caption: Chapter 01 - The magic begins
+    bubbles:
+    - lines:
+      - Just ask in plain English.
+      - Watch what happens!
+      w: 600
+      tx: 540
+      ty: 240
+    - lines:
+      - No secret syntax to learn.
+      - Say it your way!
+      w: 550
+      tx: 1160
+      ty: 500
+    term:
+    - copilot
+    - '> Explain what a dataclass is in Python in simple terms'
+  - img: ch01-review.png
+    alt: Pip inspects code bugs on a laptop with a magnifying glass.
+    caption: Demo - Code review in seconds
+    bubble:
+      lines:
+      - Point me at a file and I'll
+      - spot bugs and quality issues!
+      w: 560
+      tx: 700
+      ty: 330
+    term:
+    - '> Review @samples/book-app-project/book_app.py for code quality issues'
+  - img: ch01-modes.png
+    alt: Professor Quill points at three icons - a map, a waiter, and a drive-through - while Pip thinks.
+    caption: 'Three modes: GPS route, waiter chat, or drive-through'
+    bubbles:
+    - lines:
+      - Plan =
+      - a GPS route.
+      - Interactive =
+      - a waiter chat.
+      - Programmatic =
+      - a drive-through.
+      w: 358
+      tx: 470
+      ty: 610
+    - lines:
+      - I'll pick the one
+      - that fits the job.
+      w: 400
+      tx: 1190
+      ty: 195
+    term:
+    - 'copilot              # Interactive - explore and iterate'
+    - 'copilot --plan       # Plan - map it out first'
+    - 'copilot -p "..."     # Programmatic - one-shot answer'
+  - img: ch01-commands.png
+    alt: Pip operates a colorful control panel of buttons.
+    caption: Control your session
+    bubble:
+      lines:
+      - Forgot a command? Type /help.
+      - Switching topics? Use /clear.
+      - All done? Type /exit!
+      w: 640
+      tx: 800
+      ty: 320
+    term:
+    - '/help     # show all commands'
+    - '/clear    # start a fresh conversation'
+    - '/model    # show or switch the AI model'
+    - '/plan     # plan before coding'
+    - '/exit     # end the session'
+  - img: ch01-next.png
+    alt: Pip waves goodbye beside Professor Quill while walking toward a glowing arrow.
+    caption: On to Chapter 02!
+    bubbles:
+    - lines:
+      - 'Next: give me context'
+      - with the @ symbol.
+      - See you in Chapter 02!
+      w: 500
+      tx: 600
+      ty: 250
+    - lines:
+      - Keep going -
+      - you're doing great!
+      w: 440
+      tx: 950
+      ty: 490
+- badge: Chapter 02
+  title: Context and Conversations
+  subtitle: Point Copilot at your files with the @ symbol and resume work across sessions.
+  selector: Context · the @ symbol & sessions
+  panels:
+  - img: ch02-context.png
+    alt: Pip gestures while explaining to Professor Quill at a desk with a laptop showing code.
+    caption: Give Copilot context
+    bubbles:
+    - lines:
+      - Copilot is not a mind reader.
+      - Give it the right files!
+      w: 560
+      tx: 470
+      ty: 210
+    - lines:
+      - Context turns a guess
+      - into a real answer.
+      w: 470
+      tx: 760
+      ty: 250
+    term:
+    - copilot
+    - '> Review @samples/book-app-project/books.py'
+  - img: ch02-atsyntax.png
+    alt: Pip points at a laptop showing a file and an @ symbol.
+    caption: Point with the @ symbol
+    bubble:
+      lines:
+      - Type @ then a file or folder
+      - to point me right at the code.
+      w: 600
+      tx: 600
+      ty: 210
+    term:
+    - '> Explain what @samples/book-app-project/utils.py does'
+  - img: ch02-multifile.png
+    alt: Pip holds up two pages of code, comparing them side by side.
+    caption: Cross-file intelligence
+    bubble:
+      lines:
+      - Point at many files at once.
+      - I spot bugs that hide between them.
+      w: 660
+      tx: 600
+      ty: 300
+    term:
+    - '> Compare @samples/book-app-project/book_app.py'
+    - '  @samples/book-app-project/books.py for consistency'
+  - img: ch02-sessions.png
+    alt: Pip stands beside Professor Quill near a laptop showing a refresh and clock icon.
+    caption: Resume any conversation
+    bubbles:
+    - lines:
+      - Stopped for the day?
+      - Pick up where we left off.
+      w: 560
+      tx: 640
+      ty: 210
+    - lines:
+      - Sessions save automatically.
+      - Nothing is lost.
+      w: 600
+      tx: 1180
+      ty: 560
+    term:
+    - 'copilot --continue    # resume your last session'
+    - 'copilot --resume      # or pick one from a list'
+- badge: Chapter 03
+  title: Development Workflows
+  subtitle: Review, refactor, debug, test, and ship code with everyday Copilot workflows.
+  selector: Workflows · review, debug, test, ship
+  panels:
+  - img: ch03-workflows.png
+    alt: Pip stands confidently in a workshop beside Professor Quill wearing a tool belt.
+    caption: Five developer workflows
+    bubbles:
+    - lines:
+      - 'Five everyday jobs: review,'
+      - refactor, debug, test, ship.
+      w: 600
+      tx: 840
+      ty: 210
+    - lines:
+      - Pick the workflow
+      - that fits the task.
+      w: 470
+      tx: 390
+      ty: 470
+    term:
+    - copilot
+    - '> Review @samples/book-app-project/book_app.py for code quality'
+  - img: ch03-review.png
+    alt: Pip inspects a laptop with a magnifying glass, spotting issues in code.
+    caption: Code review
+    bubble:
+      lines:
+      - Point me at a file and I
+      - flag bugs and quality issues.
+      w: 560
+      tx: 560
+      ty: 240
+    term:
+    - '> Review @samples/book-app-project/book_app.py for code quality'
+  - img: ch03-debug.png
+    alt: Pip wears a detective hat and uses a magnifying glass to find a bug on a laptop.
+    caption: The bug detective
+    bubble:
+      lines:
+      - Show me the error and the file.
+      - I track the bug down.
+      w: 600
+      tx: 560
+      ty: 250
+    term:
+    - '> Why does this fail? Find the bug in'
+    - '  @samples/book-app-project/books.py'
+  - img: ch03-test.png
+    alt: Pip gives a thumbs up beside Professor Quill near a laptop showing green checkmarks.
+    caption: Refactor, test, and ship
+    bubbles:
+    - lines:
+      - Refactor it, test it,
+      - then ship it with git.
+      w: 520
+      tx: 600
+      ty: 210
+    - lines:
+      - Tests are your safety net.
+      - Always run them.
+      w: 560
+      tx: 1180
+      ty: 540
+    term:
+    - '> @samples/book-app-project/books.py Add unit tests'
+    - 'pytest    # run the new tests'
+- badge: Chapter 04
+  title: Agents and Custom Instructions
+  subtitle: Hire built-in and custom agents, and set project standards once with AGENTS.md.
+  selector: Agents · specialists & AGENTS.md
+  panels:
+  - img: ch04-agents.png
+    alt: Pip stands with arms crossed beside specialist icons and Professor Quill.
+    caption: Hire a specialist
+    bubbles:
+    - lines:
+      - An agent is a specialist
+      - I can hire for a job.
+      w: 520
+      tx: 400
+      ty: 210
+    - lines:
+      - Right expert,
+      - right task.
+      w: 420
+      tx: 900
+      ty: 500
+    term:
+    - copilot
+    - '> /agent          # list and pick an agent'
+  - img: ch04-builtin.png
+    alt: Pip gives a thumbs up beside a laptop showing a checklist and a badge.
+    caption: Built-in agents
+    bubble:
+      lines:
+      - Some agents are built in.
+      - Just type a slash command.
+      w: 560
+      tx: 560
+      ty: 240
+    term:
+    - '> /review     # built-in code-review agent'
+    - '> /plan       # built-in planning agent'
+  - img: ch04-custom.png
+    alt: Pip proudly holds a page showing a gear icon, representing a custom agent.
+    caption: Make your own agent
+    bubble:
+      lines:
+      - Write your own agent in a
+      - simple markdown file.
+      w: 560
+      tx: 600
+      ty: 300
+    term:
+    - cp .github/agents/python-reviewer.agent.md \
+    - '   ~/.copilot/agents/'
+  - img: ch04-instructions.png
+    alt: Pip gestures toward a laptop with a gear while Professor Quill watches.
+    caption: Set project standards once
+    bubbles:
+    - lines:
+      - Put your rules in AGENTS.md.
+      w: 560
+      tx: 600
+      ty: 230
+    - lines:
+      - Set standards once -
+      - Copilot follows them.
+      w: 540
+      tx: 1300
+      ty: 560
+    term:
+    - '# Add an AGENTS.md file to your repo'
+    - '# Copilot reads it automatically'
+- badge: Chapter 05
+  title: Skills
+  subtitle: Use built-in skills automatically, call them by name, or build your own.
+  selector: Skills · power tools for tasks
+  panels:
+  - img: ch05-skills.png
+    alt: Pip holds a power drill beside Professor Quill, with drill bits on a workbench.
+    caption: Skills are power tools
+    bubbles:
+    - lines:
+      - Skills are swappable
+      - drill bits for a task.
+      w: 500
+      tx: 480
+      ty: 210
+    - lines:
+      - The right bit
+      - makes the job easy.
+      w: 440
+      tx: 945
+      ty: 440
+    term:
+    - copilot
+    - '> /skills list      # see available skills'
+  - img: ch05-auto.png
+    alt: Pip raises a fist beside a laptop that lights up with a checkmark badge.
+    caption: Skills apply automatically
+    bubble:
+      lines:
+      - Describe the job and the
+      - matching skill kicks in.
+      w: 560
+      tx: 560
+      ty: 240
+    term:
+    - '> Check @samples/book-app-project/book_app.py for quality'
+  - img: ch05-invoke.png
+    alt: Pip presses a large glowing button next to a laptop.
+    caption: Or call one by name
+    bubble:
+      lines:
+      - Want a specific skill?
+      - Call it with a slash.
+      w: 520
+      tx: 560
+      ty: 300
+    term:
+    - '> /code-checklist Check'
+    - '  @samples/book-app-project/book_app.py'
+  - img: ch05-create.png
+    alt: Pip holds a clipboard beside Professor Quill, building a new skill.
+    caption: Build your own skill
+    bubbles:
+    - lines:
+      - Make your own skill with
+      - a short SKILL.md file.
+      w: 520
+      tx: 600
+      ty: 300
+    - lines:
+      - Teach it once,
+      - reuse it forever.
+      w: 470
+      tx: 1180
+      ty: 560
+    term:
+    - mkdir -p .github/skills/security-audit
+    - '# then add a SKILL.md inside'
+- badge: Chapter 06
+  title: MCP Servers
+  subtitle: Add new powers to Copilot with MCP servers for GitHub, files, and docs.
+  selector: MCP Servers · add new powers
+  panels:
+  - img: ch06-mcp.png
+    alt: Pip stands beside Professor Quill as glowing extension icons plug into a power outlet.
+    caption: MCP adds superpowers
+    bubbles:
+    - lines:
+      - MCP servers are like
+      - browser extensions.
+      w: 500
+      tx: 400
+      ty: 210
+    - lines:
+      - Each one plugs in
+      - a new power.
+      w: 420
+      tx: 700
+      ty: 520
+    term:
+    - copilot
+    - '> /mcp show      # see configured servers'
+  - img: ch06-github.png
+    alt: Pip gives a thumbs up beside a laptop showing the GitHub octocat.
+    caption: GitHub MCP is built in
+    bubble:
+      lines:
+      - The GitHub server is built
+      - in - no setup needed.
+      w: 560
+      tx: 560
+      ty: 240
+    term:
+    - '> List the latest commits in this repository'
+  - img: ch06-add.png
+    alt: Pip connects a small server device as glowing icons rise from it.
+    caption: Add more servers
+    bubble:
+      lines:
+      - Browse the registry and
+      - add servers in seconds.
+      w: 560
+      tx: 560
+      ty: 300
+    term:
+    - '> /mcp search    # browse and add servers'
+  - img: ch06-workflow.png
+    alt: Pip thinks beside a laptop with glowing icons while Professor Quill looks on.
+    caption: Many servers, one workflow
+    bubbles:
+    - lines:
+      - Files, docs, and GitHub -
+      - all in one chat.
+      w: 520
+      tx: 460
+      ty: 220
+    - lines:
+      - Many servers,
+      - one smooth flow.
+      w: 440
+      tx: 1090
+      ty: 560
+    term:
+    - '> Read the docs, then open a pull request'
+- badge: Chapter 07
+  title: Putting It Together
+  subtitle: Combine everything to go from an idea to a tested, reviewed pull request.
+  selector: Putting It Together · idea to PR
+  panels:
+  - img: ch07-orchestra.png
+    alt: Pip holds a conductor baton beside glowing tool icons and Professor Quill.
+    caption: Conduct the orchestra
+    bubbles:
+    - lines:
+      - You are the conductor.
+      - Copilot is the orchestra.
+      w: 560
+      tx: 400
+      ty: 210
+    - lines:
+      - You lead - the
+      - tools play along.
+      w: 440
+      tx: 900
+      ty: 500
+    term:
+    - copilot
+    - '> Plan a feature, then build it step by step'
+  - img: ch07-idea.png
+    alt: Pip points at a laptop showing a checklist and a glowing lightbulb.
+    caption: Idea to merged PR
+    bubble:
+      lines:
+      - Start with an idea, end
+      - with a merged pull request.
+      w: 560
+      tx: 460
+      ty: 230
+    term:
+    - '> @samples/book-app-project/books.py'
+    - '  Add a get_unread_books method'
+  - img: ch07-flow.png
+    alt: Pip raises a fist beside a laptop showing a plan, build, test, and ship workflow.
+    caption: Plan, build, test, ship
+    bubble:
+      lines:
+      - Plan it, build it, test it,
+      - then ship it.
+      w: 520
+      tx: 470
+      ty: 240
+    term:
+    - '> /plan       # map it out first'
+    - '> Build it, add tests, then open a PR'
+  - img: ch07-done.png
+    alt: Pip cheers with arms raised beside a trophy and Professor Quill giving a thumbs up.
+    caption: You did it!
+    bubbles:
+    - lines:
+      - You made it to the
+      - end. Amazing work!
+      w: 480
+      tx: 460
+      ty: 230
+    - lines:
+      - Now go build
+      - something great!
+      w: 470
+      tx: 1080
+      ty: 580
+    term:
+    - 'gh pr create     # open your pull request'
+    - '# You finished the course!'
