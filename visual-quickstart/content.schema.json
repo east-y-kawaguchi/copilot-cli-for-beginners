@@ -38,6 +38,7 @@
         "avatar_alt": { "type": "string", "description": "Alt text for the mascot avatar image." },
         "select_label": { "type": "string", "description": "Home page chapter-picker button label." },
         "open_section_label": { "type": "string", "description": "Book-icon deep-link label (aria-label + tooltip)." },
+        "read_in_course_label": { "type": "string", "description": "Visible text on the caption-row 'Read in course' deep-link pill." },
         "copy_command_label": { "type": "string", "description": "Prefix for terminal copy-button aria-labels, e.g. 'Copy command'." },
         "progress_label": { "type": "string", "description": "Banner progress-bar aria label. {n} and {total} are substituted." },
         "skip_label": { "type": "string", "description": "Visually-hidden skip-to-content link text." },

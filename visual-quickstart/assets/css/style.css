@@ -14,7 +14,7 @@
   Then rebuild:  npm run build:comic
 */
 :root{
-  --ink:#1f2937; --cream:#fdf3df; --card:#fce9c7; --teal:#0c7a7a; --orange:#b8530f;
+  --ink:#1f2937; --cream:#fdf3df; --card:#fce9c7; --teal:#0c7a7a; --accent:#be123c;
   --focus:#0b66c2;
   --shadow:0 14px 34px rgba(31,41,55,.16);
 }
@@ -90,20 +90,23 @@ a{color:var(--teal)}
 .cell{position:relative;margin:0;background:var(--card);border-radius:22px;
   padding:14px;box-shadow:var(--shadow)}
 .cell .panel{display:block;width:100%;height:auto;border-radius:12px}
-.cap{font-weight:700;font-size:1.325rem;color:var(--ink);margin:2px 4px 12px;
-  padding-left:24px;line-height:1.25}
+.cap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-weight:700;
+  font-size:1.325rem;color:var(--ink);margin:2px 4px 12px;padding-left:24px;line-height:1.25}
+.cap-title{flex:1 1 auto;min-width:0}
 .badge{position:absolute;top:-14px;left:-14px;z-index:2;width:46px;height:46px;
-  display:grid;place-items:center;border-radius:50%;background:var(--orange);
+  display:grid;place-items:center;border-radius:50%;background:var(--accent);
   color:#fff;font-weight:800;font-size:1.25rem;border:4px solid #fff;
-  box-shadow:0 6px 14px rgba(232,112,42,.4)}
-/* book-icon link to the matching course section, top-right of each frame */
-.frame-link{position:absolute;top:-14px;right:-14px;z-index:2;width:46px;height:46px;
-  display:grid;place-items:center;border-radius:50%;background:var(--teal);
-  color:#fff;border:4px solid #fff;box-shadow:0 6px 14px rgba(15,138,138,.4);
-  text-decoration:none;transition:transform .15s ease,filter .15s ease}
-.frame-link:hover{transform:translateY(-2px) scale(1.05);filter:brightness(1.08)}
-.frame-link:focus-visible{outline:3px solid #58a6ff;outline-offset:2px}
-.frame-link svg{width:24px;height:24px}
+  box-shadow:0 6px 14px rgba(190,18,60,.4)}
+/* 'Read in course' deep-link pill, right-aligned on the caption row */
+.cap-link{flex:0 0 auto;margin-left:auto;display:inline-flex;align-items:center;gap:7px;
+  white-space:nowrap;font-size:.86rem;font-weight:600;line-height:1;color:var(--teal);
+  text-decoration:none;background:#fff;border:2px solid #e7dcc4;border-radius:999px;
+  padding:7px 14px;box-shadow:0 3px 10px rgba(31,41,55,.08);
+  transition:background .15s ease,color .15s ease,border-color .15s ease,transform .15s ease}
+.cap-link:hover{background:var(--teal);color:#fff;border-color:var(--teal);transform:translateY(-1px)}
+.cap-link:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.cap-ico{width:17px;height:17px;flex:0 0 auto}
+.cap-arrow{font-size:1.05em;line-height:1}
 .foot{text-align:center;color:#6c6657;font-size:.92rem;padding:26px 18px 46px}
 /* home */
 body.home{display:flex;flex-direction:column;min-height:100vh}
@@ -123,13 +126,14 @@ body.home{display:flex;flex-direction:column;min-height:100vh}
 .home-main{flex:1;width:100%;max-width:920px;margin:0 auto;padding:20px 20px 40px;
   display:flex;flex-direction:column}
 .home-intro{margin:6px 0 0}
-.home-intro .cap{text-align:center;padding-left:0;font-size:1.40rem}
+.home-intro .cap{justify-content:center;text-align:center;padding-left:0;font-size:1.40rem}
+.home-intro .cap-title{flex:0 1 auto}
 .intro-cta{text-align:center;margin:24px auto 0}
 .intro-cta .cta{border:3px solid #fff;box-shadow:0 10px 24px rgba(0,0,0,.40)}
 .intro-cta .cta:hover{transform:translateY(-2px)}
-.cta{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
   font-weight:700;font-size:1.12rem;padding:14px 30px;border-radius:999px;
-  box-shadow:0 10px 22px rgba(232,112,42,.4)}
+  box-shadow:0 10px 22px rgba(190,18,60,.4)}
 .cta:hover{transform:translateY(-2px)}
 /* custom chapter selector */
 .chapter-select{position:relative;max-width:560px;width:100%;margin:26px auto 0}
@@ -159,8 +163,7 @@ body.home{display:flex;flex-direction:column;min-height:100vh}
   .cap{font-size:1.225rem;padding-left:28px;margin:2px 4px 8px}
   .home-main{padding:14px 8px 32px}
   .badge{width:38px;height:38px;font-size:1.05rem;top:-12px;left:-8px}
-  .frame-link{width:38px;height:38px;top:-12px;right:-8px}
-  .frame-link svg{width:20px;height:20px}
+  .cap-link{font-size:.8rem;padding:6px 12px}
 }
 /* ===== starter engagement layer: scroll reveal - typewriter - copy ===== */
 /* Hidden initial state is only armed once JS adds .anim-ready, so no-JS and
@@ -217,16 +220,16 @@ body.home .home-intro .panel > g:nth-of-type(3){animation-delay:4.6s}
   .anim-ready main.strip .cell,
   .anim-ready main.strip .cell .badge{opacity:1;transform:none;transition:none}
   .term-copy .tc-box,.term-copy .tc-box svg{transition:none}
-  .frame-link{transition:none}
+  .cap-link{transition:none}
   body.home .banner-wrap,body.home .home-av,body.home .home-intro,
   body.home .home-intro .cap,body.home .home-intro .panel > g{animation:none}
 }
 /* Windows High Contrast / forced-colors: keep controls and focus visible */
 @media (forced-colors: active){
-  .nav-btn,.nav-home,.cta,.frame-link,.skip-link,.chapter-select summary,
+  .nav-btn,.nav-home,.cta,.cap-link,.skip-link,.chapter-select summary,
   .term-copy .tc-box{border:1px solid ButtonText}
   .nav-btn:focus-visible,.nav-home:focus-visible,.cta:focus-visible,
-  .frame-link:focus-visible,.skip-link:focus-visible,
+  .cap-link:focus-visible,.skip-link:focus-visible,
   .chapter-select summary:focus-visible,.cs-options a:focus-visible,
   .term-copy:focus-visible .tc-box,.foot a:focus-visible{
     outline:3px solid Highlight;outline-offset:2px}

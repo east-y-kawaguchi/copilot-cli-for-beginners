@@ -20,6 +20,7 @@ site:
   avatar_alt: Pip the fox mascot waving
   select_label: Select a Chapter                        # home page chapter-picker button
   open_section_label: Read this section in the full course  # book-icon link (aria + tooltip)
+  read_in_course_label: Read in course                  # visible text on the caption deep-link pill
   copy_command_label: Copy command                      # prefix for terminal copy-button aria-labels
   progress_label: 'Course progress: chapter {n} of {total}'  # banner progress bar (aria); {n}/{total} are filled in
   skip_label: Skip to main content                      # visually-hidden skip-to-content link
