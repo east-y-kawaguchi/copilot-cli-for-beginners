@@ -42,6 +42,12 @@ public class BookCollection
 
     private void SaveBooks()
     {
+        var directory = Path.GetDirectoryName(_dataFile);
+        if (!string.IsNullOrEmpty(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
         var json = JsonSerializer.Serialize(_books, JsonOptions);
         File.WriteAllText(_dataFile, json);
     }
@@ -54,7 +60,7 @@ public class BookCollection
         return book;
     }
 
-    public List<Book> ListBooks() => _books;
+    public IReadOnlyList<Book> ListBooks() => _books.AsReadOnly();
 
     public Book? FindBookByTitle(string title)
     {
@@ -79,10 +85,11 @@ public class BookCollection
         return true;
     }
 
-    public List<Book> FindByAuthor(string author)
+    public IReadOnlyList<Book> FindByAuthor(string author)
     {
         return _books
             .Where(b => b.Author.Equals(author, StringComparison.OrdinalIgnoreCase))
-            .ToList();
+            .ToList()
+            .AsReadOnly();
     }
 }
